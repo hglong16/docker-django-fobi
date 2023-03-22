@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,8 @@ SECRET_KEY = 'django-insecure-j=hsjl%ht#g(plp06kc#8*pef8u6d=uc^wdg8cb6&4d8y&eyyq
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+SITE_ID = 1
 
 
 # Application definition
@@ -108,7 +111,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(".", "templates")],
         'OPTIONS': {
             'context_processors': [
                 "django.template.context_processors.debug",
